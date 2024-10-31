@@ -17,3 +17,8 @@ def make_valid_df(df, int_remove_rows):
         df = df.fillna(0)
     else:
         df = df.iloc[int_remove_rows:].reset_index(drop=True)
+
+
+def get_recent_data(csv_fn, periods):
+    df = pd.read_csv(csv_fn)
+    return df.tail(periods)
